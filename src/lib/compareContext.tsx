@@ -8,7 +8,7 @@ import {
   useCallback,
 } from "react";
 
-const STORAGE_KEY = "ev-garage-track-compare";
+const STORAGE_KEY = "ev-garage-trucks-compare";
 export const COMPARE_MAX = 4;
 
 // id версии — строка вида "brand-slug/model-slug/trim-slug"

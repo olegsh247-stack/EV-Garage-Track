@@ -38,7 +38,7 @@ export default function AdminLoginPage() {
         className="w-full max-w-sm rounded-2xl border border-line bg-surface-card p-8"
       >
         <p className="font-display text-lg font-bold text-ink">
-          EV-Garage-Track · Админка
+          EV-Garage-Trucks · Админка
         </p>
         <p className="mt-1 text-sm text-ink-soft">
           Введите пароль для доступа к загрузке фото

@@ -9,7 +9,7 @@ export function Header() {
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-4">
         <Link href="/" className="flex items-baseline gap-2">
           <span className="font-display text-xl font-bold tracking-tight text-ink">
-            EV-Garage-Track
+            EV-Garage-Trucks
           </span>
           <span className="font-mono text-[11px] text-charge">.RU</span>
         </Link>

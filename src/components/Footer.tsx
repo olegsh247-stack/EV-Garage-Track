@@ -8,7 +8,7 @@ export function Footer() {
       <div className="mx-auto max-w-[1400px] px-5 py-16">
         <div className="grid gap-12 sm:grid-cols-3">
           <div>
-            <p className="font-display text-lg font-bold">EV-Garage-Track</p>
+            <p className="font-display text-lg font-bold">EV-Garage-Trucks</p>
             <p className="mt-3 max-w-xs text-sm text-surface/60">
               Каталог коммерческого электротранспорта из Китая для бизнеса.
               Грузовики, фургоны и рефрижераторы 1.0–3.5 тонны.
@@ -65,7 +65,7 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col gap-2 border-t border-surface/10 pt-6 text-xs text-surface/40 sm:flex-row sm:items-center sm:justify-between">
-          <span>&copy; {new Date().getFullYear()} EV-Garage-Track</span>
+          <span>&copy; {new Date().getFullYear()} EV-Garage-Trucks</span>
           <span>Демонстрационная версия каталога</span>
         </div>
       </div>
