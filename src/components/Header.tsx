@@ -18,9 +18,6 @@ export function Header() {
           <Link href="/#brands" className="transition-colors hover:text-ink">
             Каталог
           </Link>
-          <Link href="/customs" className="transition-colors hover:text-ink">
-            Таможня
-          </Link>
           <Link href="/#about" className="transition-colors hover:text-ink">
             О нас
           </Link>

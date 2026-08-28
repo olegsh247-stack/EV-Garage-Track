@@ -12,7 +12,7 @@ import { AddToCompareButton } from "./AddToCompareButton";
 import { ContactCTA } from "./ContactCTA";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { formatPrice } from "@/lib/format";
-import { totalPrice } from "@/lib/pricing";
+import { totalPrice, fullPriceBreakdown } from "@/lib/pricing";
 import { getPhotoMap, photoKey } from "@/lib/photos";
 
 export async function TrimDetailView({
@@ -26,6 +26,7 @@ export async function TrimDetailView({
 }) {
   const hasMultipleTrims = model.trims.length > 1;
   const sections = specSections(model, trim);
+  const breakdown = fullPriceBreakdown(trim);
   const photoMap = await getPhotoMap();
   const photoUrl = photoMap[photoKey(brand.slug, model.slug)] ?? model.image;
 
@@ -116,21 +117,34 @@ export async function TrimDetailView({
             </div>
           )}
 
-          <div className="mt-6">
+          <div className="mt-6 rounded-2xl border border-line bg-surface-card p-5">
             <p className="font-mono text-[11px] uppercase tracking-wide text-ink-soft">
-              Ориентировочная цена «под ключ»
+              Итоговая цена
             </p>
             <p className="font-display text-3xl font-bold text-ink">
-              {formatPrice(totalPrice(trim))}
+              {formatPrice(breakdown.total)}
             </p>
-            <p className="mt-2 text-xs text-ink-soft">
-              Цена ориентировочная и зависит от комплектации, курса валют и
-              актуальных условий поставки. Точный расчёт растаможки — по запросу:
-              см. раздел{" "}
-              <Link href="/customs" className="text-charge hover:underline">
-                «Таможня»
-              </Link>
-              .
+
+            <div className="mt-4 divide-y divide-line border-t border-line">
+              {[
+                { label: "Цена в Китае", value: breakdown.chinaPrice },
+                { label: "Таможня", value: breakdown.customs },
+                { label: "Логистика", value: breakdown.logistics },
+              ].map((row) => (
+                <div
+                  key={row.label}
+                  className="flex items-center justify-between gap-4 py-2.5"
+                >
+                  <span className="text-sm text-ink-soft">{row.label}</span>
+                  <span className="font-mono text-sm font-medium text-ink">
+                    {formatPrice(row.value)}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-4 text-xs text-ink-soft">
+              Цена ориентировочная. Точный расчёт — по запросу.
             </p>
           </div>
 

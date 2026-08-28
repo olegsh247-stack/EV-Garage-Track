@@ -81,12 +81,6 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="#brands"
-                className="rounded-full bg-ink px-6 py-3 font-mono text-sm text-surface transition-colors hover:bg-deep"
-              >
-                Смотреть каталог
-              </Link>
-              <Link
                 href="/customs"
                 className="rounded-full border border-line px-6 py-3 font-mono text-sm text-ink transition-colors hover:border-ink"
               >
