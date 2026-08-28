@@ -127,7 +127,7 @@ export async function TrimDetailView({
 
             <div className="mt-4 divide-y divide-line border-t border-line">
               {[
-                { label: "Цена в Китае", value: breakdown.chinaPrice },
+                { label: "В Китае", value: breakdown.chinaPrice },
                 { label: "Таможня", value: breakdown.customs },
                 { label: "Логистика", value: breakdown.logistics },
               ].map((row) => (
@@ -143,8 +143,12 @@ export async function TrimDetailView({
               ))}
             </div>
 
-            <p className="mt-4 text-xs text-ink-soft">
-              Цена ориентировочная. Точный расчёт — по запросу.
+            <p className="mt-4 text-xs leading-relaxed text-ink-soft">
+              <span className="font-medium">Примечание по расчётам:</span>{" "}
+              Логистика — 15% от цены в Китае, но не менее 300 000 ₽. Таможня
+              включает таможенный сбор, пошлину 15%, НДС 22% и утилизационный
+              сбор — расчёт для нового авто (до 1 года), личное пользование, по
+              курсу ЦБ на сегодня. Точная сумма — по запросу.
             </p>
           </div>
 
